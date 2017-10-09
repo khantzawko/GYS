@@ -3,6 +3,12 @@ html {
   height:100%;
 }
 
+.half-circle {
+    height: 14px;
+    background: url('../img/shape.png');
+    background-repeat: repeat-x;
+}
+
 body {
     background: url('../img/background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -26,6 +32,16 @@ body {
   height: 25px;
   background-color: black;
   color: white;
+}
+
+.copyright {
+  background-color: brown;
+}
+
+.text-copyright {
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .navbar, .dropdown-menu{
@@ -171,8 +187,7 @@ body {
 
 footer {
   background-color: #424242;
-  padding-top: 20px;
-  padding-bottom: 20px;
+
 }
 
 .logo {
@@ -214,6 +229,18 @@ footer {
 
   .pull-right {
     float: inherit !important;
+  }
+
+  .welcome {
+    padding-top: 50px;
+    width: 100%;
+  }
+
+  body {
+      background: url('../img/background.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      background-size: cover;
+      background-color: transparent;
   }
 }
 
