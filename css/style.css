@@ -9,6 +9,12 @@ html {
     background-repeat: repeat-x;
 }
 
+.half-circle-down {
+    height: 20px;
+    background: url('../img/shape_down.jpg');
+    background-repeat: repeat-x;
+}
+
 body {
     background: url('../img/background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -35,7 +41,7 @@ body {
 }
 
 .copyright {
-  background-color: brown;
+  background-color: #424242;
 }
 
 .text-copyright {
@@ -65,6 +71,12 @@ body {
   padding-bottom: 80px;
 }
 
+.container-fluid-yellow {
+  background-color: #F8D730;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
 .container-dotted {
   background-color: white;
   padding-top: 5px;
@@ -73,9 +85,44 @@ body {
 
 .panel-body {
   border: none;
-  border-radius: 15px;
   color: white;
+  border-radius: 25px;
   margin-bottom: 20px;
+}
+
+.panel-box {
+  border: none;
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  box-shadow: 1px 1px 8px #9AA1B7;
+}
+
+.text-padding {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.img-facility {
+  margin-top: 0px;
+}
+
+/* Make sure images don't get too big */
+img {
+  max-width: 100%;
+}
+
+/* no-gutters Class Rules */
+.row.no-gutters {
+   margin-right: 0;
+   margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+   padding-right: 0;
+   padding-left: 0;
 }
 
 .panel-yellow {
@@ -94,6 +141,11 @@ body {
   background-color: #7ECCEB;
 }
 
+.welcome-gys {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
 .btn-circle {
   border-radius: 25px;
   border: none;
@@ -101,7 +153,15 @@ body {
 }
 
 .horizontal-line {
-  width: 100px;
+  margin-top: 10px;
+  width: 70px;
+  border-top: 4px solid #F8D730;
+}
+
+.horizontal-line-left {
+  margin-left: 0px;
+  margin-top: 10px;
+  width: 70px;
   border-top: 4px solid #F8D730;
 }
 
@@ -163,11 +223,6 @@ body {
   text-align:inherit;
 }
 
-.form-group {
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
 .subscription-form {
   padding-left: 2%;
   padding-right: 2%;
@@ -187,7 +242,6 @@ body {
 
 footer {
   background-color: #424242;
-
 }
 
 .logo {
@@ -229,11 +283,6 @@ footer {
 
   .pull-right {
     float: inherit !important;
-  }
-
-  .welcome {
-    padding-top: 50px;
-    width: 100%;
   }
 
   body {
