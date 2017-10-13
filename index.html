@@ -12,12 +12,35 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script>
+  $(document).ready(function(){
+
+  $('#itemslider').carousel({ interval: 3000 });
+
+  $('.carousel-showmanymoveone .item').each(function(){
+  var itemToClone = $(this);
+
+  for (var i=1;i<3;i++) {
+  itemToClone = itemToClone.next();
+
+  if (!itemToClone.length) {
+  itemToClone = $(this).siblings(':first');
+  }
+
+  itemToClone.children(':first-child').clone()
+  .addClass("cloneditem-"+(i))
+  .appendTo($(this));
+  }
+  });
+  });
+</script>
+
 <body>
 
   <!-- FBSDK library -->
 
   <div id="fb-root"></div>
-  <script>(function(d, s, id) {
+    <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
@@ -227,30 +250,100 @@
 
   <!-- END OF SECTION 4 -->
 
-  <div class="container-dotted text-center">
-    <hr class="dotted-line">
-  </div>
+
 
   <!-- SECTION 5 -->
 
   <div class="container-fluid-yellow text-center">
+    <hr class="dotted-line-white">
+      <div class="container">
+          <h2 class="text-white">What Parents are saying – </h2>
+          <hr class="horizontal-line">
 
-    <div class="container">
-        <h2>What Parents are saying</h2>
-        <hr class="horizontal-line">
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            <br> <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
+          <!-- <div class="col-md-4 col-sm-4">
+            <div class="panel-box-white">
+              <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, voluptas, sunt vitae mollitia iure perferendis rerum odio! Natus, cupiditate, est, quas, non perspiciatis in quo possimus eos voluptas tempore maxime.</p>
+              <p class="text-right"> - Okkar Kyaw </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4">
+            <div class="panel-box-white">
+              <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, voluptas, sunt vitae mollitia iure perferendis rerum odio! Natus, cupiditate, est, quas, non perspiciatis in quo possimus eos voluptas tempore maxime.</p>
+              <p class="text-right"> - Okkar Kyaw </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4">
+            <div class="panel-box-white">
+              <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, voluptas, sunt vitae mollitia iure perferendis rerum odio! Natus, cupiditate, est, quas, non perspiciatis in quo possimus eos voluptas tempore maxime. </p>
+              <p class="text-right"> - Okkar Kyaw </p>
+            </div>
+          </div> -->
+
+
+
+          <!-- Item slider-->
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="carousel carousel-showmanymoveone slide" id="itemslider">
+                  <div class="carousel-inner">
+
+                    <div class="item active">
+                      <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="panel-box-white">
+                          <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, voluptas, sunt vitae mollitia iure perferendis rerum odio! Natus, cupiditate, est, quas, non perspiciatis in quo possimus eos voluptas tempore maxime.</p>
+                          <p class="text-right"> - A </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="panel-box-white">
+                          <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, voluptas, sunt vitae mollitia iure perferendis rerum odio! Natus, cupiditate, est, quas, non perspiciatis in quo possimus eos voluptas tempore maxime.</p>
+                          <p class="text-right"> - B </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="panel-box-white">
+                          <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, voluptas, sunt vitae mollitia iure perferendis rerum odio! Natus, cupiditate, est, quas, non perspiciatis in quo possimus eos voluptas tempore maxime.</p>
+                          <p class="text-right"> - C </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item">
+                      <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="panel-box-white">
+                          <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, voluptas, sunt vitae mollitia iure perferendis rerum odio! Natus, cupiditate, est, quas, non perspiciatis in quo possimus eos voluptas tempore maxime.</p>
+                          <p class="text-right"> - D </p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div id="slider-control">
+                    <a class="left carousel-control" href="#itemslider" data-slide="prev"><img src="./img/arrow-left.png" alt="Left" class="img-responsive"></a>
+                    <a class="right carousel-control" href="#itemslider" data-slide="next"><img src="./img/arrow-right.png" alt="Right" class="img-responsive"></a>
+                </div>
+                </div>
+              </div>
+            </div>
+
       </div>
 
-    </div>
+      <br><br>
+    <hr class="dotted-line-white">
   </div>
 
   <!-- END OF SECTION 5 -->
 
-  <div class="container-dotted text-center">
-    <hr class="dotted-line">
-  </div>
 
   <!-- SECTION 6 -->
 
@@ -301,50 +394,56 @@
 
 
   <footer>
-    <div class="container">
-      <div class="row">
 
-          <div class="col-md-2">
-            <center>
-              <img src="./img/logo.png" class="logo" alt="logo">
-            </center>
-          </div>
 
-          <div class="col-md-3">
-            <h3 class="text-white">Global Yangon School</h3>
-            <p class="text-white link-paddling"> Address: No.42, Mya Kwar Nyo Home Place (Aung Kaung Kyaw), Tharkayta Township <br> Phone: 09977119550, 09952446956 <br> Email: globalyangonschool@gmail.com</p>
-          </div>
 
-          <div class="col-md-2">
-            <h4 class="text-white footer-paddling">Quick Links</h4>
 
-            <a href="https://www.facebook.com/globalyangonschool/"><p class="text-white link-paddling">Careers</p></a>
-            <a href="https://www.facebook.com/globalyangonschool/"><p class="text-white link-paddling">Contact Us</p></a>
-            <a href="https://www.facebook.com/globalyangonschool/"><p class="text-white link-paddling">Privacy Policy</p></a>
-            <a href="https://www.facebook.com/globalyangonschool/"><p class="text-white link-paddling">Terms & Conditions</p></a>
 
-          </div>
+    <div class="container-fluid-footer">
+      <hr class="dotted-line-white">
 
-          <div class="col-md-5">
-            <h4 class="text-white footer-paddling"> Subscribe to Our Newsletter</h4>
-              <div class="subscription-form">
-                <input type="text" class="form-control text-center" id="subscription" placeholder="Enter your email here!">
-                <center>
-                  <button type="button" class="btn btn-black btn-subscribe btn-md">Subscribe</button>
-                </center>
-              </div>
-          </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+              <center>
+                <img src="./img/logo.png" class="logo" alt="logo">
+              </center>
+            </div>
 
+            <div class="col-md-3">
+              <h3 class="text-white">Global Yangon School</h3>
+              <p class="text-white link-paddling"> Address: No.42, Mya Kwar Nyo Home Place (Aung Kaung Kyaw), Tharkayta Township <br> Phone: 09977119550, 09952446956 <br> Email: globalyangonschool@gmail.com</p>
+            </div>
+
+            <div class="col-md-2">
+              <h4 class="text-white footer-paddling">Quick Links</h4>
+
+              <a href="https://www.facebook.com/globalyangonschool/"><p class="text-white link-paddling">Careers</p></a>
+              <a href="https://www.facebook.com/globalyangonschool/"><p class="text-white link-paddling">Contact Us</p></a>
+              <a href="https://www.facebook.com/globalyangonschool/"><p class="text-white link-paddling">Privacy Policy</p></a>
+              <a href="https://www.facebook.com/globalyangonschool/"><p class="text-white link-paddling">Terms & Conditions</p></a>
+
+            </div>
+
+            <div class="col-md-5">
+              <h4 class="text-white footer-paddling"> Subscribe to Our Newsletter</h4>
+                <div class="subscription-form">
+                  <input type="text" class="form-control text-center" id="subscription" placeholder="Enter your email here!">
+                  <center>
+                    <button type="button" class="btn btn-black btn-subscribe btn-md">Subscribe</button>
+                  </center>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-12 text-center copyright">
+          <p class="text-copyright"> Copyright @ Global Yangon School. All Right Reserved.</p>
+        </div>
       </div>
 
+      <hr class="dotted-line-white">
     </div>
-
-    <br>
-
-    <div class="col-md-12 text-center copyright">
-      <p class="text-copyright"> Copyright @ Global Yangon School. All Right Reserved.</p>
-    </div>
-
   </footer>
 
 
